@@ -11,6 +11,8 @@ foreach(FLAG ${LIBMYSQLCLIENT_CFLAGS_OTHER})
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${FLAG}")
 endforeach()
 
+link_directories(${LIBMYSQLCLIENT_LIBRARY_DIRS})
+
 add_executable(hello hello.c)
 target_include_directories(hello PRIVATE ${LIBMYSQLCLIENT_INCLUDE_DIRS})
 target_link_libraries(hello PRIVATE ${LIBMYSQLCLIENT_LIBRARIES})
